@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: kubernetes
+name: callisto-test-1
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: build
+    image: quay.io/ukhomeofficedigital/node-artifactory:14
+    commands:
+      - npm install
+      - npm run lint
